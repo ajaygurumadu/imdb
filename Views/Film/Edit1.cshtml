@@ -1,0 +1,39 @@
+﻿@model IMDB.Models.Actors
+@{
+    ViewBag.Title = "Edit Actor";
+}
+
+<h1>Edit Film</h1>
+
+<section>
+    <div>
+
+        @using (Html.BeginForm("Edit", "Actors", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary()
+
+            <label for="name">Name</label>
+            <input type="text" id="name" value="@Model.Name" name="name">
+            @Html.ValidationMessageFor(m => m.Name)
+
+            <label for="sex">Sex</label>
+            <input type="text" id="sex" value="@Model.Sex" name="sex">
+            @Html.ValidationMessageFor(m => m.Sex)
+
+            <label for="dob">DOB</label>
+            <input type="text" id="dob" value="@Model.DOB" name="dob">
+            @Html.ValidationMessageFor(m => m.DOB)
+
+            <label for="bio">BIO</label>
+            <input type="text" id="bio" value="@Model.BIO" name="bio">
+            @Html.ValidationMessageFor(m => m.BIO)
+
+
+            <button type="submit" class="accept">Edit</button>
+            <button onclick="location.href='/';return false;" class="cancel">Cancel</button>
+        }
+
+    </div>
+</section>

@@ -1,0 +1,32 @@
+﻿@model IMDB.Models.Producers
+
+@{
+    ViewBag.Title = "Delete Producer";
+}
+
+<h1>Delete Film</h1>
+<section>
+    <div>
+
+        @using (Html.BeginForm("Delete", "Producers", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <label for="name">Name</label>
+            <input type="text" id="name" value="@Model.Name" disabled>
+            <label for="sex">Sex</label>
+            <input type="text" id="sex" value="@Model.Sex" disabled>
+            <label for="bio">BIO</label>
+            <input type="text" id="bio" value="@Model.BIO" disabled>
+            <label for="dob">DOB</label>
+            <input type="text" id="dob" value="@Model.DOB" disabled>
+
+
+            <button type="submit" class="accept">Delete</button>
+            <button onclick="location.href='/';return false;" class="cancel">Cancel</button>
+        }
+
+    </div>
+</section>
+
+
